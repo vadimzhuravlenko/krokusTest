@@ -1,0 +1,6 @@
+framework module Pods_secondTestTask {
+  umbrella header "Pods-secondTestTask-umbrella.h"
+
+  export *
+  module * { export * }
+}
