@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Cities-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="secondTestTask" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                             <constraint firstItem="nQs-fC-dUf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qHR-lY-1zK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zbX-i9-f8J"/>
+                    <navigationItem key="navigationItem" title="Cities" id="zbX-i9-f8J"/>
                     <connections>
                         <outlet property="table" destination="nQs-fC-dUf" id="lQf-c7-Rj8"/>
                     </connections>
@@ -38,6 +38,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="979.71014492753636" y="67.633928571428569"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="83Z-o8-WiJ">
+            <objects>
+                <viewController storyboardIdentifier="secondVC" id="v6J-Ws-njn" customClass="SecondViewController" customModule="secondTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3B8-8a-47j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="is6-0H-S9q" userLabel="secondTable">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="38j-P6-Vo7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="is6-0H-S9q" firstAttribute="trailing" secondItem="38j-P6-Vo7" secondAttribute="trailing" id="E7F-sb-d4F"/>
+                            <constraint firstItem="is6-0H-S9q" firstAttribute="bottom" secondItem="38j-P6-Vo7" secondAttribute="bottom" id="Xgm-Dk-MNM"/>
+                            <constraint firstItem="is6-0H-S9q" firstAttribute="top" secondItem="38j-P6-Vo7" secondAttribute="top" id="YBb-4T-6eB"/>
+                            <constraint firstItem="is6-0H-S9q" firstAttribute="leading" secondItem="38j-P6-Vo7" secondAttribute="leading" id="t2Y-DZ-nTG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="secondTable" destination="is6-0H-S9q" id="vUi-bb-EgA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wdb-Kq-UTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1737.68115942029" y="67.633928571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZQI-pb-Se4">

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB186160947ADB4B0A557BFF /* Pods_secondTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE0237A8CA212AE5F40602 /* Pods_secondTestTask.framework */; };
+		E67BE90F28A1164100D75BBA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67BE90E28A1164100D75BBA /* SecondViewController.swift */; };
 		E6851945289BD3810039DE5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6851944289BD3810039DE5B /* AppDelegate.swift */; };
 		E6851947289BD3810039DE5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6851946289BD3810039DE5B /* SceneDelegate.swift */; };
 		E6851949289BD3810039DE5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6851948289BD3810039DE5B /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		75BE0237A8CA212AE5F40602 /* Pods_secondTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_secondTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA57851DABDE3F9AEB503CB /* Pods-secondTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-secondTestTask.debug.xcconfig"; path = "Target Support Files/Pods-secondTestTask/Pods-secondTestTask.debug.xcconfig"; sourceTree = "<group>"; };
+		E67BE90E28A1164100D75BBA /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		E6851941289BD3810039DE5B /* secondTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = secondTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6851944289BD3810039DE5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6851946289BD3810039DE5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E67BE91128A11AAD00D75BBA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6851948289BD3810039DE5B /* ViewController.swift */,
+				E67BE90E28A1164100D75BBA /* SecondViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		E6851938289BD3800039DE5B = {
 			isa = PBXGroup;
 			children = (
@@ -90,10 +101,10 @@
 		E6851943289BD3810039DE5B /* secondTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				E67BE91128A11AAD00D75BBA /* ViewControllers */,
 				E67BE8E528A0F3CE00D75BBA /* Models */,
 				E6851944289BD3810039DE5B /* AppDelegate.swift */,
 				E6851946289BD3810039DE5B /* SceneDelegate.swift */,
-				E6851948289BD3810039DE5B /* ViewController.swift */,
 				E685194A289BD3810039DE5B /* Main.storyboard */,
 				E685194D289BD3830039DE5B /* Assets.xcassets */,
 				E685194F289BD3830039DE5B /* LaunchScreen.storyboard */,
@@ -220,6 +231,7 @@
 				E6851949289BD3810039DE5B /* ViewController.swift in Sources */,
 				E6851945289BD3810039DE5B /* AppDelegate.swift in Sources */,
 				E6851947289BD3810039DE5B /* SceneDelegate.swift in Sources */,
+				E67BE90F28A1164100D75BBA /* SecondViewController.swift in Sources */,
 				E6851959289BD4A60039DE5B /* CitiesResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

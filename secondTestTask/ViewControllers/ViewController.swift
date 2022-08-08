@@ -13,7 +13,7 @@ import SwiftyJSON
 class ViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
-    
+    private var secondViewController: SecondViewController?
     var namesArray = [String]()
     let url = "https://krokapp.by/api/get_cities/11/"
 
@@ -34,13 +34,8 @@ class ViewController: UIViewController {
         AF.request(url).responseJSON { response in
             switch response.result {
             case .success(let value):
-//            let welcome = try? JSONDecoder().decode(Welcome.self, from: response.data!)
-//            welcome?.forEach({ element in
-//                let name = element.name
-//                self.names = name
-//            })
+                
                 let json = JSON(value)
-                print(json)
                 self.update(json: json)
             
 
@@ -48,7 +43,6 @@ class ViewController: UIViewController {
                 print("Error: \(error.localizedDescription)")
                     }
             self.table.reloadData()
-            print(self.namesArray)
         }
     }
     
@@ -57,7 +51,6 @@ class ViewController: UIViewController {
             let curr = ("\(json[index]["name"])")
             namesArray.append(curr)
                 }
-
     }
 }
 
@@ -76,7 +69,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = namesArray[indexPath.row]
         return cell
     }
-
-
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "secondVC") as! SecondViewController
+        self.navigationController?.pushViewController(VC, animated: false)
+    }
+    
 }
