@@ -33,13 +33,14 @@
                     <navigationItem key="navigationItem" title="Cities" id="zbX-i9-f8J"/>
                     <connections>
                         <outlet property="table" destination="nQs-fC-dUf" id="lQf-c7-Rj8"/>
+                        <segue destination="v6J-Ws-njn" kind="show" id="uYc-rQ-1M8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="979.71014492753636" y="67.633928571428569"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Places-->
         <scene sceneID="83Z-o8-WiJ">
             <objects>
                 <viewController storyboardIdentifier="secondVC" id="v6J-Ws-njn" customClass="SecondViewController" customModule="secondTestTask" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="is6-0H-S9q" userLabel="secondTable">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -61,6 +62,7 @@
                             <constraint firstItem="is6-0H-S9q" firstAttribute="leading" secondItem="38j-P6-Vo7" secondAttribute="leading" id="t2Y-DZ-nTG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Places" id="k2Y-Ps-bWE"/>
                     <connections>
                         <outlet property="secondTable" destination="is6-0H-S9q" id="vUi-bb-EgA"/>
                     </connections>

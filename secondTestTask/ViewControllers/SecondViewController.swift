@@ -10,9 +10,11 @@ import Alamofire
 import SwiftyJSON
 
 class SecondViewController: UIViewController {
+    
 
     let secondUrl = "http://krokapp.by/api/get_points/11/"
     var placesArray = [String]()
+    var secondCityID: Int = 0
     
     @IBOutlet weak var secondTable: UITableView!
     override func viewDidLoad() {
@@ -20,9 +22,7 @@ class SecondViewController: UIViewController {
         
         getData()
         setUpTableView()
-        
-        
-        
+        print(secondCityID)
     }
     
     private func setUpTableView() {
@@ -35,7 +35,6 @@ class SecondViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print(json)
                 self.update(json: json)
             
 
@@ -48,10 +47,15 @@ class SecondViewController: UIViewController {
     
     func update(json: JSON) {
         for index in 0...json.count-1 {
-            let curr = ("\(json[index]["name"])")
-            
-            placesArray.append(curr)
+            if json[index]["city_id"].rawValue as! Int == secondCityID {
+                if json[index]["lang"] == 3 {
+                    let curr = ("\(json[index]["name"])")
+                    placesArray.append(curr)
+                    placesArray = placesArray.filter({ $0 != ""})
+                    }
                 }
+            
+            }
 
     }
 
@@ -59,7 +63,6 @@ class SecondViewController: UIViewController {
 
 extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return placesArray.count
 
     }
