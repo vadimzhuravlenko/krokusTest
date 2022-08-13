@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     let url = "https://krokapp.by/api/get_cities/11/"
     var citiesDict = [Int:String]()
     var firstCityID: Int = 0
-    var cityImage = [String]()
+    var cityImage = [String:String]()
+    var image: String = ""
     
     
 
@@ -56,10 +57,12 @@ class ViewController: UIViewController {
                 citiesDict = citiesDict.filter ({ $0.value != ""})
                 namesArray.append(curr)
                 namesArray = namesArray.filter({ $0 != ""})
+                cityImage[("\(json[index]["logo"])")] = ("\(json[index]["name"])")
+                cityImage = cityImage.filter ({ $0.value != ""})
                     }
                 }
             }
-}
+    }
 
     
 
@@ -75,6 +78,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = namesArray[indexPath.row]
+        for (key, value) in cityImage {
+            if cell.textLabel?.text == value {
+                image = key
+            }
+        }
+        let url = NSURL(string:"\(image)")
+            let imagedata = NSData.init(contentsOf: url! as URL)
+
+        if imagedata != nil {
+            cell.imageView?.image = UIImage(data:imagedata! as Data)
+        }
         return cell
     }
     
@@ -82,7 +96,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "secondVC") as! SecondViewController
         let cell = tableView.cellForRow(at: indexPath)
         guard let cellText = cell?.textLabel?.text else { return }
-        print(cellText)
+//        print(cellText)
         for (key, value) in citiesDict {
             if cellText == value {
                 firstCityID = key
@@ -95,3 +109,4 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
